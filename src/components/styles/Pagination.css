@@ -3,10 +3,9 @@
     gap: 0.5em;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
-    max-width: 300px;
     margin: 20px;
     padding-top: 2em;
+    
   }
   
   .pagination button {
@@ -14,7 +13,6 @@
     color: var(--color-green);
     padding: 5px 10px;
     border: none;
-    margin-right: 9px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     box-shadow: 5px 5px 0px 1px rgba(0, 0, 0, 0.3);

@@ -16,8 +16,8 @@ function App() {
   const [idLocation, setIdLocation] = useState (getRandomNumber(126))
   const [hasError, setHasError] = useState(false)
   const [isLoading, setIsLoading] =useState(true)
-  const [currentPage, setCurrentPage] = useState(1);
-  const [residentsPerPage] = useState(8);
+  const [currentPage, setCurrentPage] = useState(1)
+  const [residentsPerPage] = useState(8)
   const totalCards = location?.residents.length
 
   useEffect(() => {
@@ -90,7 +90,16 @@ function App() {
             ) )
           }
         </div>
+
+        <Pagination
+      currentPage={currentPage}
+      totalPages={Math.ceil(
+        location?.residents.length / residentsPerPage
+      )}
+      onPageChange={handlePageChange}
+      />
           </>
+          
         )
         : (
           <NoCards/>

@@ -8,6 +8,8 @@
     
   }
   
+
+
   .pagination button {
     background-color: white;
     color: var(--color-green);
@@ -22,7 +24,7 @@
   .pagination button.active {
     background-color: var(--color-green);
     color: white;
-    box-shadow: 0 0 10px 2px rgba(24, 24, 24, 0.5);
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0, 0.3);
     padding-inline: 1em; 
   }
   

@@ -33,9 +33,9 @@
 }
 
 .header {
-    background: url(./img/rick-and-morty.jpg) no-repeat;
+    background: url(./public/img/rick-and-morty.jpg) no-repeat;
     background-size: cover;
-    height: 250px;
+    height: 300px;
     overflow: hidden;
     
 

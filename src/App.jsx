@@ -8,6 +8,7 @@ import FormLocation from './components/FormLocation'
 import Pagination from './components/Pagination'
 import Loading from './components/Loading'
 import Alert from './components/Alert'
+import NoCards from './components/NoCards'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
   const [isLoading, setIsLoading] =useState(true)
   const [currentPage, setCurrentPage] = useState(1);
   const [residentsPerPage] = useState(8);
+  const totalCards = location?.residents.length
 
   useEffect(() => {
     const url = `https://rickandmortyapi.com/api/location/${idLocation}`
@@ -48,6 +50,7 @@ function App() {
      
       <FormLocation
         setIdLocation={setIdLocation}
+        setCurrentPage = {setCurrentPage}
       />
       {
         isLoading
@@ -61,7 +64,10 @@ function App() {
           location={location}
         />
          
-         <Pagination
+        {totalCards > 0 
+        ?(
+          <>
+           <Pagination
       currentPage={currentPage}
       totalPages={Math.ceil(
         location?.residents.length / residentsPerPage
@@ -84,19 +90,20 @@ function App() {
             ) )
           }
         </div>
+          </>
+        )
+        : (
+          <NoCards/>
+        )
+
+        }
         </>
   
           )
         )
         
       }
-      <Pagination
-      currentPage={currentPage}
-      totalPages={Math.ceil(
-        location?.residents.length / residentsPerPage
-      )}
-      onPageChange={handlePageChange}
-      />
+      
 
     </div>
   )

@@ -1,14 +1,16 @@
 import getRandomNumber from "../utils/getRandomNumber"
 
-const FormLocation = ({setIdLocation}) => {
+const FormLocation = ({setIdLocation, setCurrentPage}) => {
 
     const handleSubmit = e => {
       e.preventDefault()
       const inputValue = e.target.inputId.value.trim()
       if (inputValue === '' || inputValue === '0'){
         setIdLocation(getRandomNumber(126))
+        setCurrentPage(1)
       }else{
         setIdLocation(inputValue)
+        setCurrentPage(1)
       }
        e.target.inputId.value = '' //retorne a vacio
     }

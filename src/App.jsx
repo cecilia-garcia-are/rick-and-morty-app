@@ -73,6 +73,7 @@ function App() {
         location?.residents.length / residentsPerPage
       )}
       onPageChange={handlePageChange}
+      setCurrentPage={setCurrentPage}
       />
         
         <div className='resident-container'>
@@ -97,6 +98,7 @@ function App() {
         location?.residents.length / residentsPerPage
       )}
       onPageChange={handlePageChange}
+      setCurrentPage={setCurrentPage}
       />
           </>
           
